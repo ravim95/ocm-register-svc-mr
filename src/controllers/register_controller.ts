@@ -33,10 +33,20 @@ export class RegisterController {
 			axios.post(apiurl, register_data)
 			    .then((res) => {
 				console.log('Body: ', register_data);
-				successResponse('register successfull', register_data, res);
+				res.json({
+				        STATUS: 'SUCCESS',
+				        MESSAGE: 'register successfull',
+				        register_data
+				    });
+				//successResponse('register successfull', register_data, res);
 			    }).catch((err) => {
 				console.error(err);
-				failureResponse('api call failure', register_data, res);
+				res.json({
+				        STATUS: 'FAILURE',
+				        MESSAGE: 'api call failure',
+				        register_data
+				    });				
+				//failureResponse('api call failure', register_data, res);
 			    });                              
                     
                 }
