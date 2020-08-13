@@ -33,7 +33,8 @@ export class ApiServer {
   tracer: TracerApi;
 
 	//register	
-	 public mongoUrl: string = 'mongodb://localhost/ocm';	
+	 //public mongoUrl: string = 'mongodb://localhost/ocm';
+	 public mongoUrl: string = 'mongodb://mongouser:mongouser@172.21.227.31:27017/ocm';
 	private register_routes: RegisterRoutes = new RegisterRoutes();
 
   // private readonly app: express.Application;
